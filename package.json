@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "node test",
-    "exec":"nodemon server",
+    "exec": "nodemon server",
     "start": "node server"
   },
   "author": "Erick Stopassoli",
