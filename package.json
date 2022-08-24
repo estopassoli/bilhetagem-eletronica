@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "node test",
+    "exec":"nodemon server",
     "start": "node server"
   },
   "author": "Erick Stopassoli",
@@ -14,7 +15,8 @@
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "express-session": "^1.17.3"
+    "express-session": "^1.17.3",
+    "nodemon": "^2.0.19"
   },
   "engines": {
     "node": "18.4.0",

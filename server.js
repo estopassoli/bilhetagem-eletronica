@@ -4,10 +4,10 @@ const app = express();
 const bodyParser = require('body-parser');
 const {
     postRouter
-} = require('./router/post');
+} = require('./routes/post');
 const {
     getRouter
-} = require('./router/get');
+} = require('./routes/get');
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || 'localhost';
 app.use(bodyParser.json());
