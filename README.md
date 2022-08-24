@@ -1,2 +1,9 @@
 # express-api-base
-A simple structure for base express api
+This repository is an simple structure to generate a "base" code for express API.
+
+# libs
+- dotenv<br>
+- ejs<br>
+- body-parser<br>
+- express-session<br>
+- express<br>
