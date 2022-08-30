@@ -12,11 +12,9 @@ exports.getRouter = (app) => {
 
                 let file = fs.readFileSync(path.resolve(__dirname, '../db/' + files[i]), 'utf-8')
                 console.log(file)
-                let data = file.split('\n')
-                data.shift()
-                dat += data;
+
+                dat += file;
             }
-            dat = dat.replaceAll(',', '\n')
             res.end(dat)
         } else {
             res.end('access denied')
