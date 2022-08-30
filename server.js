@@ -20,7 +20,7 @@ app.use(express.static(__dirname + "/views"));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.listen(PORT, () => {
-    console.log("Server running in http://" + HOST + ":" + PORT);
+    //console.log("Server running in http://" + HOST + ":" + PORT);
 });
 
 postRouter(app);

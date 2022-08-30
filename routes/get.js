@@ -4,10 +4,20 @@ const path = require('path')
 
 exports.getRouter = (app) => {
     app.get('/getdata', (req, res) => {
-        let dir = fs.readdirSync(path.resolve(__dirname, '../db/'))
-        for (let i in dir) {
-            const file = path.resolve(__dirname, '../db/' + dir[i])
-            req.query.token == 'acredite' ? res.sendFile(file) : res.send('Access denied')
+        let files = fs.readdirSync(path.resolve(__dirname, '../db/'))
+
+        let dat = 'Data;Linha;Sentido;Prefixo;Programado;Inicio Real;Fim Real;Qtd. Pass.;Encerrante;Observação\n'
+        if (req.query.token == 'acredite') {
+            for (let i in files) {
+                //console.log(files[i])
+                let file = fs.readFileSync(path.resolve(__dirname, '../db/' + files[i]), 'utf-8')
+                let data = file.split('\n')
+                data.shift()
+                dat += data;
+            }
+            res.end(dat.replaceAll(',', '\n'))
+        } else {
+            res.end('access denied')
         }
     })
     app.get('/api/v1/bilhetagens-disponiveis', (req, res) => {

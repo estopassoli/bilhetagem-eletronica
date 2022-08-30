@@ -22,7 +22,7 @@ const deletethis = (v) => {
 $('form').on('submit', (e) => {
     e.preventDefault()
     const dados = $(document.forms[0]).serialize()
-    console.log(dados)
+    //console.log(dados)
     $.ajax({
         url: '/api/v1/nova-bilhetagem',
         type: 'POST',
@@ -80,7 +80,7 @@ $('#bring_data').on('click', function () {
 
 
                         let hora = hh + ':' + mm
-                        console.log(hora)
+                        //console.log(hora)
                         $('tbody').append(`
                     <tr>
                     <td class="hd">

@@ -75,7 +75,7 @@ exports.postRouter = (app) => {
                         encerrante: split[8],
                         obs: split[9]
                     }
-                    console.log('Puxei do digitado!')
+                    //console.log('Puxei do digitado!')
                     data.push(dados)
                 }
             }
@@ -89,7 +89,7 @@ exports.postRouter = (app) => {
                         tabela: split[0],
                         programado: split[3],
                     }
-                    console.log('Puxei do programado!')
+                    //console.log('Puxei do programado!')
                     data.push(dados)
                 }
             }
