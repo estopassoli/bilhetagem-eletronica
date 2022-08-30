@@ -4,9 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "node test",
-    "exec": "nodemon server",
-    "start": "node server"
+    "start": "node server.js"
   },
   "author": "Erick Stopassoli",
   "license": "MIT",
@@ -21,8 +19,6 @@
     "nodemon": "^2.0.19"
   },
   "engines": {
-    "node": "18.4.0",
-    "npm": "8.12.1",
-    "yarn": "1.22.19"
+    "node": "14.x"
   }
 }
