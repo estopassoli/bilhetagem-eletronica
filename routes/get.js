@@ -4,7 +4,7 @@ const path = require('path')
 //s
 exports.getRouter = (app) => {
     app.get('/getdata', (req, res) => {
-        let files = fs.readdirSync(path.resolve(__dirname, '../db/'))
+        let files = fs.readdirSync(path.resolve(__dirname, '../db/'), 'utf8')
 
         console.log(files)
 
@@ -16,6 +16,7 @@ exports.getRouter = (app) => {
                 let data = file.split('\n')
                 data.shift()
                 dat += data;
+                console.log(dat)
                 dat = JSON.stringify(dat.replaceAll(',', '\n'))
             }
             res.end(dat)
