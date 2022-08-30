@@ -45,7 +45,7 @@ exports.postRouter = (app) => {
         }
 
         line = line.replaceAll(',', '')
-        fs.writeFileSync(path.resolve(__dirname, './db/' + data.date + '_' + data.sentido + '_' + data.linha + '.csv'), header + line, 'utf-8')
+        fs.writeFileSync(path.resolve(`../db/${data.date}_${data.sentido}_${data.linha}.csv`), header + line, 'utf-8')
     })
     app.post('/api/v1/upload', upload.single('arquivo'), (req, res) => {
         res.end('Upload feito com sucesso!')
