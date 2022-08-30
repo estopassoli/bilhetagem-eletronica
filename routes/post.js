@@ -60,7 +60,7 @@ exports.postRouter = (app) => {
         } = req.body;
         let data = []
         try {
-            let file = fs.readFileSync(path.resolve(__dirname, './db/' + date + '_' + sentido + '_' + linha + '.csv'), 'utf8')
+            let file = fs.readFileSync(path.resolve(__dirname, '../db/' + date + '_' + sentido + '_' + linha + '.csv'), 'utf8')
 
             if (file) {
                 file = file.split('\n')
@@ -81,7 +81,7 @@ exports.postRouter = (app) => {
                 }
             }
         } catch {
-            let arquivo = fs.readFileSync(path.resolve(__dirname, './uploads/' + linha + '.csv'), 'utf8')
+            let arquivo = fs.readFileSync(path.resolve(__dirname, '../uploads/' + linha + '.csv'), 'utf8')
             let file = arquivo.split('\r\n')
             for (let i in file) {
                 let split = file[i].split(';')
@@ -107,6 +107,6 @@ exports.postRouter = (app) => {
     app.post('/api/v1/delete-importado', (req, res) => {
         const file = req.body.file;
         fs.rmSync(path.resolve(__dirname, '../uploads/' + file + '.csv'))
-        res.end('Arquivo deletado com sucesso!')
+        res.end('Deletado com sucesso')
     })
 }
