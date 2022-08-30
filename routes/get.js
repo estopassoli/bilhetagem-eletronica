@@ -11,6 +11,7 @@ exports.getRouter = (app) => {
             for (let i in files) {
 
                 let file = fs.readFileSync(path.resolve(__dirname, '../db/' + files[i]), 'utf-8')
+                console.log(file)
                 let data = file.split('\n')
                 data.shift()
                 dat += data;
