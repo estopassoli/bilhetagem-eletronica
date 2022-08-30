@@ -19,14 +19,14 @@
     <title>Upload</title>
 </head>
 
-<body>
-    <form action="/api/v1/upload" method="post" enctype="multipart/form-data">
-
+<body style="display: flex; text-align: center;justify-content: center;align-items: center;">
+    <form action="/api/v1/upload" method="post" enctype="multipart/form-data" style="margin: 15% 0 ;width: 400px;">
         <div class="mb-3">
-            <label for="formFile" class="form-label">Clique ou arraste seu arquivo:</label>
-            <input class="form-control" type="file" id="formFile">
-          </div>
-        <input type="submit" value="Enviar" />
+            <label for="formFile" class="form-label">Clique ou arraste o arquivo:</label>
+            <input class="form-control" name="arquivo" type="file" id="formFile">
+        </div>
+        <input type="submit" value="Importar"
+            style="border-radius: 10px; border: 1px solid #000; outline: none; background-color: transparent; padding: 5px;" />
     </form>
 </body>
 
