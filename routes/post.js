@@ -45,7 +45,7 @@ exports.postRouter = (app) => {
         }
 
         line = line.replaceAll(',', '')
-        fs.writeFileSync(path.resolve(__dirname, '../db/' + data.date + '_' + data.sentido + '_' + data.linha + '.csv'), header + line, 'utf-8')
+        fs.writeFileSync(path.resolve(__dirname, './db/' + data.date + '_' + data.sentido + '_' + data.linha + '.csv'), header + line, 'utf-8')
     })
     app.post('/api/v1/upload', upload.single('arquivo'), (req, res) => {
         res.end('Upload feito com sucesso!')
@@ -60,7 +60,7 @@ exports.postRouter = (app) => {
         } = req.body;
         let data = []
         try {
-            let file = fs.readFileSync(path.resolve(__dirname, '../db/' + date + '_' + sentido + '_' + linha + '.csv'), 'utf8')
+            let file = fs.readFileSync(path.resolve(__dirname, './db/' + date + '_' + sentido + '_' + linha + '.csv'), 'utf8')
 
             if (file) {
                 file = file.split('\n')
@@ -81,7 +81,7 @@ exports.postRouter = (app) => {
                 }
             }
         } catch {
-            let arquivo = fs.readFileSync(path.resolve(__dirname, '../uploads/' + linha + '.csv'), 'utf8')
+            let arquivo = fs.readFileSync(path.resolve(__dirname, './uploads/' + linha + '.csv'), 'utf8')
             let file = arquivo.split('\r\n')
             for (let i in file) {
                 let split = file[i].split(';')
