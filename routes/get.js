@@ -6,15 +6,18 @@ exports.getRouter = (app) => {
     app.get('/getdata', (req, res) => {
         let files = fs.readdirSync(path.resolve(__dirname, '../db/'))
 
+        console.log(files)
+
         let dat = 'Data;Linha;Sentido;Prefixo;Programado;Inicio Real;Fim Real;Qtd. Pass.;Encerrante;Observação\n'
         if (req.query.token == 'acredite') {
             for (let i in files) {
-                //console.log(files[i])
+                console.log(files[i])
                 let file = fs.readFileSync(path.resolve(__dirname, '../db/' + files[i]), 'utf-8')
                 let data = file.split('\n')
                 data.shift()
                 dat += data;
             }
+            console.log(dat)
             res.end(dat.replaceAll(',', '\n'))
         } else {
             res.end('access denied')
