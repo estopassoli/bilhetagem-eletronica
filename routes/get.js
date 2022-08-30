@@ -9,12 +9,13 @@ exports.getRouter = (app) => {
         let dat = 'Data;Linha;Sentido;Prefixo;Programado;Inicio Real;Fim Real;Qtd. Pass.;Encerrante;Observação\n'
         if (req.query.token == 'acredite') {
             for (let i in files) {
-                //console.log(files[i])
+
                 let file = fs.readFileSync(path.resolve(__dirname, '../db/' + files[i]), 'utf-8')
                 let data = file.split('\n')
                 data.shift()
                 dat += data;
             }
+            dat = dat.replaceAll(',', '\n')
             res.end(dat)
         } else {
             res.end('access denied')
