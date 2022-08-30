@@ -28,12 +28,13 @@ $('form').on('submit', (e) => {
         type: 'POST',
         data: dados,
         success: function () {
-            setTimeout(() => {
-                alert('Dados enviados com sucesso!')
-                window.location.href = '/';
-            }, 2000)
+
         }
     })
+    setTimeout(() => {
+        alert('Dados enviados com sucesso!')
+        window.location.href = '/';
+    }, 2000)
 })
 
 $('#bring_data').on('click', function () {
