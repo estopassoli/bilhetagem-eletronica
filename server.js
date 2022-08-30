@@ -22,5 +22,10 @@ app.listen(PORT, () => {
     //console.log("Server running in http://" + HOST + ":" + PORT);
 });
 
-postRouter(app);
-getRouter(app);
+
+try {
+    postRouter(app);
+    getRouter(app);
+} catch (err) {
+    console.log(err)
+}
