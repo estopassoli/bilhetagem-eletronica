@@ -97,4 +97,16 @@ exports.postRouter = (app) => {
         }
         res.json(data);
     })
+
+
+    app.post('/api/v1/delete-digitado', (req, res) => {
+        const file = req.body.file;
+        fs.rmSync(path.resolve(__dirname, '../db/' + file + '.csv'))
+        res.end('Arquivo deletado com sucesso!')
+    })
+    app.post('/api/v1/delete-importado', (req, res) => {
+        const file = req.body.file;
+        fs.rmSync(path.resolve(__dirname, '../uploads/' + file + '.csv'))
+        res.end('Arquivo deletado com sucesso!')
+    })
 }
