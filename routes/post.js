@@ -40,9 +40,7 @@ exports.postRouter = (app) => {
             line += `${data.date};${data.linha};${data.sentido};${data.prefixo[i]};${data.programado[i]};${data.hora_ini[i]};${data.hora_fim[i]};${data.qtd_pax[i]};${data.encerrante[i]};${data.obs[i]}\n`;
         }
 
-        line = line.replaceAll(',', '')
-
-
+        console.log(line)
         fs.writeFileSync(path.resolve(__dirname, '../db/' + `${data.date}_${data.sentido}_${data.linha}.csv`), header + line)
 
     })
