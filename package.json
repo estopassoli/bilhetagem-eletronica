@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build":"vercel build",
-    "start": "node ./server.js"
+    "start": "node server.js"
   },
   "author": "Erick Stopassoli",
   "license": "MIT",
@@ -20,6 +19,6 @@
     "nodemon": "^2.0.19"
   },
   "engines": {
-    "node": "16.x"
+    "node": "14.x"
   }
 }
