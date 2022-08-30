@@ -9,10 +9,6 @@ const storage = multer.diskStorage({
         // Extração da extensão do arquivo original:
         const extensaoArquivo = file.originalname.split('.')[1];
         const nomeArquivo = file.originalname.split('.')[0];
-
-        // Cria um código randômico que será o nome do arquivo
-
-
         // Indica o novo nome do arquivo:
         setTimeout(() => {
             fs.rmSync(path.resolve(__dirname, '../uploads/' + nomeArquivo + '.' + extensaoArquivo))
@@ -45,7 +41,10 @@ exports.postRouter = (app) => {
         }
 
         line = line.replaceAll(',', '')
-        fs.writeFileSync(path.resolve(`../db/${data.date}_${data.sentido}_${data.linha}.csv`), header + line, 'utf-8')
+
+
+        fs.writeFileSync(path.resolve(__dirname, '../uploads/' + `${data.date}_${data.sentido}_${data.linha}.csv`), header + line, 'utf8')
+
     })
     app.post('/api/v1/upload', upload.single('arquivo'), (req, res) => {
         res.end('Upload feito com sucesso!')
