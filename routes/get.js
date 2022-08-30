@@ -15,7 +15,7 @@ exports.getRouter = (app) => {
                 data.shift()
                 dat += data;
             }
-            res.end(dat)
+            res.end(dat.replaceAll(',', '\n'))
         } else {
             res.end('access denied')
         }
