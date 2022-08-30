@@ -3,7 +3,7 @@ const path = require('path')
 
 
 exports.getRouter = (app) => {
-    app.get('/api/v1/getdata', (req, res) => {
+    app.get('/getdata', (req, res) => {
         let dir = fs.readdirSync(path.resolve(__dirname, '../db/'))
         for (let i in dir) {
             const file = path.resolve(__dirname, '../db/' + dir[i])
