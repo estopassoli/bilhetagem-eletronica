@@ -16,9 +16,8 @@ exports.getRouter = (app) => {
                 let data = file.split('\n')
                 data.shift()
                 dat += data;
-                dat = dat.replaceAll(',', '\n')
+                dat = JSON.stringify(dat.replaceAll(',', '\n'))
             }
-            console.log(dat)
             res.end(dat)
         } else {
             res.end('access denied')
