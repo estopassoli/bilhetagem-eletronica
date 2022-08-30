@@ -84,26 +84,26 @@ $('#bring_data').on('click', function () {
                         $('tbody').append(`
                     <tr>
                     <td class="hd">
-                        <input type="text" name="prefixo" autocomplete="off" value="${data[i].prefixo ? data[i].prefixo : ''}">
+                        <input type="text" placeholder="Prefixo" name="prefixo" autocomplete="off" value="${data[i].prefixo ? data[i].prefixo : ''}">
                     </td>
                     <td class="hd">
-                        <input type="time" name="programado" style="text-align: center;background-color: #ccc; border: none" value="${hora}" 
+                        <input type="time" placeholder="" name="programado" style="text-align: center;background-color: #ccc; border: none" value="${hora}" 
                             readonly>
                     </td>
                     <td class="hd">
-                        <input type="time" name="hora_ini" autocomplete="off"  value="${data[i].hora_ini ?data[i].hora_ini : ''}">
+                        <input type="time" placeholder="Chegada" name="hora_ini" autocomplete="off"  value="${data[i].hora_ini ?data[i].hora_ini : ''}">
                     </td>
                     <td class="hd">
-                        <input type="time" name="hora_fim" autocomplete="off"  value="${data[i].hora_fim ? data[i].hora_fim : ''}">
+                        <input type="time" placeholder="Saída" name="hora_fim" autocomplete="off"  value="${data[i].hora_fim ? data[i].hora_fim : ''}">
                     </td>
                     <td class="hd">
-                        <input type="number" name="qtd_pax" autocomplete="off"  min="1" value="${data[i].qtd ? data[i].qtd : ''}">
+                        <input type="number" placeholder="Qtd. Pass." name="qtd_pax" autocomplete="off"  min="1" value="${data[i].qtd ? data[i].qtd : ''}">
                     </td>
                     <td class="hd">
-                        <input type="number" name="encerrante" autocomplete="off"  min="1" value="${data[i].encerrante ? data[i].encerrante : ''}">
+                        <input type="number" placeholder="Encerrante" name="encerrante" autocomplete="off"  min="1" value="${data[i].encerrante ? data[i].encerrante : ''}">
                     </td>
                     <td class="hd">
-                        <input type="text" name="obs" autocomplete="off"  value="${data[i].obs ? data[i].obs : ''}">
+                        <input type="text" placeholder="Observações" name="obs" autocomplete="off"  value="${data[i].obs ? data[i].obs : ''}">
                     </td>
                 </tr>`)
                     }
