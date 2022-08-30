@@ -48,7 +48,7 @@ exports.postRouter = (app) => {
     })
     app.post('/api/v1/upload', upload.single('arquivo'), (req, res) => {
         res.end('Upload feito com sucesso!')
-    });
+    }); //s
 
 
     app.post('/api/v1/get-bilhetagem', (req, res) => {

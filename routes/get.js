@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-
+//s
 exports.getRouter = (app) => {
     app.get('/getdata', (req, res) => {
         let files = fs.readdirSync(path.resolve(__dirname, '../db/'))
