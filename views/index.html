@@ -5,116 +5,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Bilhetagem de Transbordo</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Bilhetagem transbordo</title>
 </head>
 
 <body>
-    <div id="container">
-        <div class="sidenav">
-            <a href="">Adicionar bilhetagem <i class="fa-thin fa-plus"></i></a>
-            <!--      <a href="">Histórico de Bilhetagens</a>
-            <a href="" style="bottom: 100%;">Sair</a>
-                    <button hidden class="dropdown-btn">Dropdown
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div hidden class="dropdown-container">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-            
-            <a href="#contact">Search</a> -->
-        </div>
-        <div id="content">
+    <main>
+        <div class="content">
             <form action="">
-                <div id="content-nav">
-                    <h1 style="margin-top: 5px; margin-right: 10px;">Selecione a data: </h1>
 
-                    <input type="date" name="date" autocomplete="off"
-                        style="position: relative; float: right; background-color: transparent; border: 1px solid #fff; padding: 4px; border-radius: 7px; outline: none; font-size: 12px !important;"
-                        required>
+                <div class="header">
+                    <input type="date" name="date" id="date" required>
+                    <select name="sentido" id="sentido">
+                        <option value="" selected disabled>Selecione o sentido</option>
+                        <option value="Ida">TP/TS</option>
+                        <option value="Volta">TS/TP</option>
+                    </select>
+                    <select name="linha" id="linha">
+                        <option value="" selected disabled>Selecione uma linha</option>
+                    </select>
+                    <a id="bring_data"><i class="bi bi-search"></i></a>
+                </div>
+                <div class="body">
 
+                    <table class="table table-bordered table-hover table-responsive">
+                        <thead class="table-dark ">
+                            <tr>
+                                <th scope="col">Prefixo</th>
+                                <th scope="col">Programado</th>
+                                <th scope="col">Saída</th>
+                                <th scope="col">Chegada</th>
+                                <th scope="col">Qtd. Passageiros</th>
+                                <th scope="col">Encerrante</th>
+                                <th scope="col">Observações</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-striped">
+                        </tbody>
+                    </table>
+                    <div class="spinner"></div>
                 </div>
 
-                <div id="content-body" style="text-align: center;">
-
-                    <div id="data">
-
-                        <table class="table" id="thead">
-                            <thead class="nav-sticky">
-                                <td class="hd" scope="col" style="width: 30px;">-</td>
-                                <td class="hd" scope="col">Prefixo</td>
-                                <td class="hd" scope="col">Sentido</td>
-                                <td class="hd" scope="col">Horário Previsto</td>
-                                <td class="hd" scope="col">Hora Chegada</td>
-                                <td class="hd" scope="col">Hora Saída</td>
-                                <td class="hd" scope="col">Qtd. Passageiro</td> 
-                                <td class="hd" scope="col">Encerrante</td> 
-                                <td class="hd" scope="col">Cod. Ocorrência</td>
-                            </thead>
-                            <tbody style="margin-top: 10px !important;">
-                                <tr>
-                                    <td>
-                                        <a disabled href="#" style="font-weight: bold; cursor: default; color: #000"><i
-                                                class="fa-solid fa-trash-can"></i></a>
-                                    </td>
-                                    <td class="hd" scope="col">
-                                        <input type="text" name="prefixo" autocomplete="off" required>
-                                    </td>
-                                    
-                                    <td class="hd" scope="col">
-                                        <select name="sentido" id="" required>
-                                            <option value="" disabled selected></option>
-                                            <option value="I">TP/TS</option>
-                                            <option value="V">TS/TP</option>
-                                        </select>
-                                    </td>
-                                    <td class="hd" scope="col">
-                                        <input type="time" name="hora_previsto" autocomplete="off" required>
-                                    </td>
-                                    <td class="hd" scope="col">
-                                        <input type="time" name="hora_ini" autocomplete="off" required>
-                                    </td>
-                                    <td class="hd" scope="col">
-                                        <input type="time" name="hora_fim" autocomplete="off" required>
-                                    </td>
-                                    <td class="hd" scope="col">
-                                        <input type="number" name="qtd_pax" autocomplete="off" required min="1">
-                                    </td>
-                                    <td class="hd" scope="col">
-                                        <input type="number" name="encerrante" autocomplete="off" required min="1">
-                                    </td>
-                                    <td class="hd" scope="col">
-                                        <input type="text" name="linha" autocomplete="off" required>
-                                    </td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div id="content-footer">
-                        <button onclick="newLine()">Adicionar nova viagem</button>
-                        <input type="submit" id="submit-bilhetagem" value="Salvar">
-
-                    </div>
+                <div class="footer">
+                    <input type="submit" value="Enviar">
                 </div>
             </form>
+
         </div>
-
-    </div>
-
-
-
-
-    <script src="js/index.js">
-    </script>
+    </main>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

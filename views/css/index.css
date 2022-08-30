@@ -2,258 +2,130 @@
     padding: 0;
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 14px !important;
-    text-decoration: none;
+}
+::-webkit-scrollbar{
+    width: 7px;
+}
+::-webkit-scrollbar-thumb{
+    width: 7px;
+    background-color: #000;
 }
 
-#container {
-    display: flex;
-    width: 100%;
+main {
+    width: 100vw;
     height: 100vh;
-    overflow: hidden;
-
-}
-
-#content-footer {
-    padding: 5px 0;
-    width: 85%;
-    height: 30px;
-    display: block;
-    align-items: center;
-    text-align: center;
-    position: fixed;
-    bottom: 15px;
-    background-color: #fff;
-}
-
-#data {
-    width: 100%;
-    max-height: 91.5%;
-    width: 100%;
-    height: 96.5%;
-    background-color: #a2a2a2;
-    overflow-x: hidden;
-    overflow-y: auto;
-    display: block;
-}
-
-#content-footer>button,
-#content-footer>input {
-    margin: 0 auto;
-    padding: 7px;
-    width: max-content;
-    cursor: pointer;
-    background-color: transparent;
-    border: 1px solid #ccc;
-    height: 35px;
-    transition: all .2s ease-in-out;
-}
-
-#content-footer>button:hover,
-#content-footer>input:hover {
-    border: 1px solid rgb(33, 231, 172);
-}
-
-#content {
-    border-radius: 5px;
-    width: 80%;
-    padding-bottom: 10px;
-    max-height: 85%;
-    margin: 20px;
-    width: 100%;
-    height: 96.5%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #a2a2a2;
-    display: block;
-}
-
-#newLine {
-    margin-top: 10px !important;
-}
-
-#data {
-    height: max-content !important;
-    text-align: center;
-}
-
-#content-nav {
-    width: 100%;
+    padding: 0;
     display: flex;
     justify-content: center;
-    text-align: center;
-    align-items: center;
-    height: 40px;
-    background-color: #ccc;
 }
 
-#content-body {
-    margin-top: 5px;
-}
-
-table>tbody {
-    margin-top: 10px !important;
-}
-
-.sidenav {
+.content {
+    max-width: 100%;
+    overflow: auto;
     display: block;
-    height: 100%;
-    min-width: 180px;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-/* Style the sidenav links and the dropdown button */
-.sidenav a,
-.dropdown-btn {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #818181;
-    display: block;
-    border: none;
-    background: none;
     width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
-}
-
-/* On mouse-over */
-.sidenav a:hover,
-.dropdown-btn:hover {
-    color: #f1f1f1;
-}
-
-/* Main content */
-.main {
-    margin-left: 200px;
-    /* Same as the width of the sidenav */
-    font-size: 20px;
-    /* Increased text to enable scrolling */
-    padding: 0px 10px;
-}
-
-/* Add an active class to the active dropdown button */
-.active {
-    background-color: green;
-    color: white;
-}
-
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-    transition: all .3s ease-in-out;
-    display: none;
-    background-color: #262626;
-    padding-left: 8px;
-}
-
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-    float: right;
-    padding-right: 8px;
+    background-color: #ccc;
 }
 
 table {
+    min-width: 20%;
+    max-width: 100%;
     width: 100%;
+}
+
+thead {
+    background-color: #6d6d6d;
+}
+
+tbody {
+    text-align: center;
+    background-color: #fff;
+}
+
+td {
+
+    padding: 5px;
+
+}
+
+th {
+    text-align: center;
+    padding: 5px;
+}
+
+input,
+select {
+    padding: 5px;
+
+}
+
+.content {
+    overflow: auto;
+    width: 100%;
+    gap: 15px;
+}
+
+.body {
+    overflow: auto;
     align-items: center;
     text-align: center;
+    text-decoration: none;
+    gap: 15px;
 }
 
-td a {
-    transition: all .2s ease-in-out;
-    color: #111;
-}
-
-table thead td {
-    border-right: 1px solid #ccc;
-}
-
-table thead td:last-child {
-    border-right: none;
-
-}
-
-table tbody td {
-    border-right: 1px solid #ccc;
-}
-
-table tbody tr {
-    margin-top: 15px !important;
-}
-
-table tbody td:last-child {
-    border-right: none;
-}
-
-table tbody td input {
+.footer {
+    overflow: auto;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
     text-align: center;
-    max-width: 75%;
-    min-width: 40%;
-    padding: 2px;
+    justify-content: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.footer input {
+    padding: 7px;
+    border-radius: 10px;
     border: none;
     outline: none;
-    border-radius: 2px;
+    transition: .2s ease all;
 }
 
+.footer input:hover {
+    background-color: aquamarine;
+}
+
+.header {
+    background-color: #6d6d6d63;
+    border-bottom: 1px solid #fff;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.header>input,
 select {
-    border: 1px solid #fff;
-    padding: 4px;
-    border-radius: 4px;
-    outline: none;
-    font-size: 12px !important;
+    border: none;
+    padding: 10px;
+    max-width: 100px;
+    border-radius: 5px;
+    height: max-content;
+    text-align: center;
 }
 
-button,
-select,
-input {
-    text-transform: uppercase;
+.header a {
+    cursor: pointer;
+    font-size: 24px;
 }
 
-td a:hover {
-    color: rgb(252, 121, 121);
-}
-
-@media screen and (max-width: 960px) {
-    * {
-        font-size: 10px;
-    }
-
-    .sidenav {
-        display: none;
-    }
-
-    table tbody select {
-        max-width: 40px;
-    }
-
-    table tbody td {
-        max-width: 35px;
-    }
-
-    #content {
-        width: 100vw !important;
-        height: 100vh !important;
-    }
-
-    #content-body {
-        width: 100%;
-        height: 100%;
-    }
-
-}
-
-::-webkit-scrollbar {
-    background-color: #ccc;
-    width: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #262626;
-    width: 5px;
-    border-radius: 3px;
+.header a>i:hover {
+    color: rgb(0, 255, 200);
 }
