@@ -2,8 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-
-
+const product = require('./api/product');
+app.use("/api/product", product)
 const {
     postRouter
 } = require('./routes/post');
