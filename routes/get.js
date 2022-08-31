@@ -6,7 +6,7 @@ exports.getRouter = (app) => {
     app.get('/getdata', (req, res) => {
         let files = fs.readdirSync(path.resolve(__dirname, '../db/'))
 
-        let dat = 'Data;Linha;Sentido;Prefixo;Programado;Inicio Real;Fim Real;Qtd. Pass.;Encerrante;Observação\n'
+        let dat = 'Data;Linha;Sentido;Prefixo;Tabela;Programado;Inicio Real;Fim Real;Qtd. Pass.;Encerrante;Observação\n'
         if (req.query.token == 'acredite') {
             for (let i in files) {
 

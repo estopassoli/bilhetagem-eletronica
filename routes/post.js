@@ -26,8 +26,8 @@ exports.postRouter = (app) => {
         const data = {
             date: req.body.date,
             linha: req.body.linha,
-            tabela: req.body.tabela,
             sentido: req.body.sentido,
+            tabela: req.body.tabela,
             prefixo: req.body.prefixo,
             programado: req.body.programado,
             hora_ini: req.body.hora_ini,
@@ -38,7 +38,7 @@ exports.postRouter = (app) => {
         }
         let line = "";
         for (let i in data.programado) {
-            line += `${data.date};${data.linha};${data.sentido};${data.prefixo[i]};${data.tabela[i]};${data.programado[i]};${data.hora_ini[i]};${data.hora_fim[i]};${data.qtd_pax[i]};${data.encerrante[i]};${data.obs[i]}\n`;
+            line += `${data.date};${data.linha};${data.sentido};${data.tabela[i]};${data.prefixo[i]};${data.programado[i]};${data.hora_ini[i]};${data.hora_fim[i]};${data.qtd_pax[i]};${data.encerrante[i]};${data.obs[i]}\n`;
         }
 
         fs.writeFileSync(path.resolve(__dirname, '../db/' + `${data.date}_${data.sentido}_${data.linha}.csv`), header + line)
