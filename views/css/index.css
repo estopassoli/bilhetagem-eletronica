@@ -4,6 +4,23 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+body {
+    overflow: hidden;
+
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    background-color: #6d6d6d;
+}
+
+::-webkit-scrollbar-thumb {
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #212529b9;
+}
 
 main {
     width: 100vw;
@@ -13,18 +30,11 @@ main {
     justify-content: center;
 }
 
-.content {
-    max-width: 100%;
-    overflow: auto;
-    display: block;
-    width: 100%;
-    background-color: #ccc;
-}
-
 table {
     min-width: 20%;
     max-width: 100%;
     width: 100%;
+    height: 100%;
 }
 
 thead {
@@ -64,16 +74,27 @@ input[name="programado"] {
     align-items: center;
 }
 
+.light {
+    color: #212529;
+    background-color: #ccc;
+}
+
+.dark {
+    background-color: #212529;
+    color: #fff;
+}
+
 .content {
     overflow: hidden;
     width: 100%;
     height: 100vh;
+    background-color: #212529b9;
     gap: 15px;
 }
 
 .body {
     overflow: auto;
-    height: 75vh;
+    height: 85vh;
     align-items: center;
     text-align: center;
     text-decoration: none;
@@ -81,9 +102,12 @@ input[name="programado"] {
 }
 
 .footer {
+    background-color: #212529;
     overflow: auto;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 10%;
     display: flex;
     align-items: center;
     text-align: center;
@@ -94,9 +118,11 @@ input[name="programado"] {
 
 .footer input {
     padding: 5px 15px;
-    border-radius: 5px;
-    border: none;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    color: #fff;
     outline: none;
+    background-color: transparent;
     transition: .2s ease all;
     font-weight: bold;
 }
@@ -104,32 +130,63 @@ input[name="programado"] {
 
 
 .footer input:hover {
+    color: rgb(0, 255, 200);
+    border: 1px solid rgb(0, 255, 200);
+    border-radius: 10px;
+}
+
+i {
     color: #fff;
-    background-color: rgb(0, 165, 110);
+    transition: .2s ease all;
 }
 
 .header {
-    background-color: #6d6d6d63;
-    border-bottom: 1px solid #fff;
+    background-color: #212529;
     overflow: hidden;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 1%;
+    height: 9%;
     align-items: center;
     text-align: center;
     text-decoration: none;
     gap: 15px;
 }
 
+/* input[type="date"]{
+    color: #fff;
+} */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    accent-color: #fff;
+}
+
+.spinner-border {
+    color: #fff;
+    margin: 15% 0;
+}
+
+input {
+    cursor: text;
+}
+
 .header>input,
 select {
-    border: none;
+    border: 1px solid #fff;
     padding: 10px;
     max-width: 100px;
     border-radius: 5px;
+    font-family: monospace;
     height: max-content;
     text-align: center;
+    color: #fff;
+    background-color: transparent;
+}
+
+option {
+    color: #000;
 }
 
 .header a {

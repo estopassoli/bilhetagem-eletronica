@@ -36,13 +36,13 @@
                     <select name="linha" id="linha" required>
                         <option value="" selected disabled>Selecione uma linha</option>
                     </select>
-                    <a id="bring_data"><i class="bi bi-search"></i></a>
-                    <a onclick="imprimir()"><i class="bi bi-printer-fill"></i></a>
-                    <a id="download"><i class="bi bi-cloud-arrow-down-fill"></i></a>
+                    <a id="bring_data" title="Buscar programação"><i class="bi bi-search"></i></a>
+                    <a onclick="imprimir()" title="Imprimir digitações"><i class="bi bi-printer-fill"></i></a>
+                    <a id="download" title="Exportar digitação"><i class="bi bi-cloud-arrow-down-fill"></i></a>
                 </div>
                 <div class="body">
 
-                    <table id="table" class="table table-bordered table-hover table-responsive">
+                    <table id="table" class="table table-bordered table-hover table-responsive" style="display: none;">
                         <thead class="table-dark ">
                             <tr>
                                 <th scope="col">Prefixo</th>
@@ -56,13 +56,13 @@
                             </tr>
                         </thead>
                         <tbody class="table-striped">
-
                         </tbody>
                     </table>
                     <div class="spinner"></div>
                 </div>
 
                 <div class="footer">
+
                     <input type="submit" class="submit" value="Salvar">
                     <div class="spinner-border spin-footer" style="display: none;"></div>
 

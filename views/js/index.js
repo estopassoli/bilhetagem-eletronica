@@ -18,7 +18,6 @@ const deletethis = (v) => {
     $(vo).remove()
 }
 
-
 $('form').on('submit', (e) => {
     e.preventDefault()
     const dados = $(document.forms[0]).serialize()
@@ -33,9 +32,9 @@ $('form').on('submit', (e) => {
     $('.submit').hide()
     $('.spin-footer').show()
     setTimeout(() => {
-        
-    $('.submit').show()
-    $('.spin-footer').hide()
+
+        $('.submit').show()
+        $('.spin-footer').hide()
         alert('Dados salvos com sucesso!')
     }, 3000)
 })
@@ -64,9 +63,18 @@ $('#bring_data').on('click', function () {
                     date: date
                 },
                 success: function (data) {
+                    $('.table').show()
+
                     for (let i in data) {
-                        let hh = data[i].programado.split(':')[0]
-                        let mm = data[i].programado.split(':')[1]
+
+                        let hh = ""
+                        let mm = ""
+                        try {
+                            hh = data[i].programado.split(':')[0]
+                            mm = data[i].programado.split(':')[1]
+                        } catch {
+
+                        }
                         if (hh == 24) {
                             hh = "00"
                         }
