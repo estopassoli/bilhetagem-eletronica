@@ -31,7 +31,7 @@ main {
 }
 
 table {
-    min-width: 20%;
+    min-width: 30%;
     max-width: 100%;
     width: 100%;
     height: 100%;
@@ -58,9 +58,17 @@ th {
     padding: 5px;
 }
 
-input,
-select {
+table input,
+table select {
     padding: 5px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+
+}
+input:focus,
+select:focus {
+    outline: none;
 
 }
 
@@ -94,7 +102,7 @@ input[name="programado"] {
 
 .body {
     overflow: auto;
-    height: 85vh;
+    height: 84vh;
     align-items: center;
     text-align: center;
     text-decoration: none;
@@ -146,7 +154,7 @@ i {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 1%;
+    padding: 2%;
     height: 9%;
     align-items: center;
     text-align: center;
@@ -170,19 +178,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 input {
     cursor: text;
+    border: none;
+    border-bottom: 1px solid #fff;
 }
 
 .header>input,
 select {
-    border: 1px solid #fff;
-    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
     max-width: 100px;
-    border-radius: 5px;
     font-family: monospace;
+    min-width: 50px;
     height: max-content;
     text-align: center;
     color: #fff;
     background-color: transparent;
+
+
 }
 
 option {
@@ -191,7 +203,7 @@ option {
 
 .header a {
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .header a>i:hover {
