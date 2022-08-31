@@ -92,7 +92,9 @@ $('#bring_data').on('click', function () {
 
                         let hora = hh + ':' + mm
                         //console.log(hora)
-                        $('tbody').append(`
+
+                        if (data[i].tabela.length > 0) {
+                            $('tbody').append(`
                     <tr>
                     <td class="hd">
                         <input type="text" placeholder="Prefixo" name="prefixo" autocomplete="off" value="${data[i].prefixo ? data[i].prefixo : ''}">
@@ -121,6 +123,7 @@ $('#bring_data').on('click', function () {
                         <input type="text" placeholder="Observações" name="obs" autocomplete="off"  value="${data[i].obs ? data[i].obs : ''}">
                     </td>
                 </tr>`)
+                        }
                     }
                 }
             })
