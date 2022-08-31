@@ -87,7 +87,7 @@ $('#bring_data').on('click', function () {
                         <input type="text" placeholder="Prefixo" name="prefixo" autocomplete="off" value="${data[i].prefixo ? data[i].prefixo : ''}">
                     </td>
                     <td class="hd">
-                        <input type="time" placeholder="" name="programado" style="text-align: center;background-color: #ccc; border: none" value="${hora}" 
+                        <input type="text" name="programado" style="text-align: center;background-color: #ccc; border: none" value="${hora}" 
                             readonly>
                     </td>
                     <td class="hd">
