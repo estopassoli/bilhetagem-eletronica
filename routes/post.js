@@ -22,10 +22,11 @@ const upload = multer({
 });
 exports.postRouter = (app) => {
     app.post('/api/v1/nova-bilhetagem', (req, res) => {
-        const header = "Data;Linha;Sentido;Prefixo;Programado;Inicio Real;Fim Real;Qtd. Pass.;Encerrante;Observação\n"
+        const header = "Data;Linha;Sentido;Prefixo;Tabela;Programado;Inicio Real;Fim Real;Qtd. Pass.;Encerrante;Observação\n"
         const data = {
             date: req.body.date,
             linha: req.body.linha,
+            tabela: req.body.tabela,
             sentido: req.body.sentido,
             prefixo: req.body.prefixo,
             programado: req.body.programado,
@@ -37,10 +38,9 @@ exports.postRouter = (app) => {
         }
         let line = "";
         for (let i in data.programado) {
-            line += `${data.date};${data.linha};${data.sentido};${data.prefixo[i]};${data.programado[i]};${data.hora_ini[i]};${data.hora_fim[i]};${data.qtd_pax[i]};${data.encerrante[i]};${data.obs[i]}\n`;
+            line += `${data.date};${data.linha};${data.sentido};${data.prefixo[i]};${data.tabela[i]};${data.programado[i]};${data.hora_ini[i]};${data.hora_fim[i]};${data.qtd_pax[i]};${data.encerrante[i]};${data.obs[i]}\n`;
         }
 
-        console.log(line)
         fs.writeFileSync(path.resolve(__dirname, '../db/' + `${data.date}_${data.sentido}_${data.linha}.csv`), header + line)
 
     })
@@ -66,14 +66,14 @@ exports.postRouter = (app) => {
                     let split = file[i].split(';')
                     var dados = {
                         prefixo: split[3],
-                        programado: split[4],
-                        hora_ini: split[5],
-                        hora_fim: split[6],
-                        qtd: split[7],
-                        encerrante: split[8],
-                        obs: split[9]
+                        tabela: split[4],
+                        programado: split[5],
+                        hora_ini: split[6],
+                        hora_fim: split[7],
+                        qtd: split[8],
+                        encerrante: split[9],
+                        obs: split[10]
                     }
-                    //console.log('Puxei do digitado!')
                     data.push(dados)
                 }
             }
@@ -87,7 +87,6 @@ exports.postRouter = (app) => {
                         tabela: split[0],
                         programado: split[3],
                     }
-                    //console.log('Puxei do programado!')
                     data.push(dados)
                 }
             }
