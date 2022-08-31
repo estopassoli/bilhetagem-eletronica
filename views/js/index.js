@@ -28,9 +28,16 @@ $('form').on('submit', (e) => {
         data: dados,
         success: function () {}
     })
+
+
+    $('.submit').hide()
+    $('.spin-footer').show()
     setTimeout(() => {
-        alert('Dados enviados com sucesso!')
-    }, 1000)
+        
+    $('.submit').show()
+    $('.spin-footer').hide()
+        alert('Dados salvos com sucesso!')
+    }, 3000)
 })
 
 $('#bring_data').on('click', function () {

@@ -28,12 +28,12 @@
 
                 <div class="header">
                     <input type="date" name="date" id="date" required>
-                    <select name="sentido" id="sentido">
+                    <select name="sentido" id="sentido" required>
                         <option value="" selected disabled>Selecione o sentido</option>
                         <option value="Ida">TP/TS</option>
                         <option value="Volta">TS/TP</option>
                     </select>
-                    <select name="linha" id="linha">
+                    <select name="linha" id="linha" required>
                         <option value="" selected disabled>Selecione uma linha</option>
                     </select>
                     <a id="bring_data"><i class="bi bi-search"></i></a>
@@ -63,7 +63,9 @@
                 </div>
 
                 <div class="footer">
-                    <input type="submit" value="Enviar">
+                    <input type="submit" class="submit" value="Salvar">
+                    <div class="spinner-border spin-footer" style="display: none;"></div>
+
                 </div>
             </form>
 
