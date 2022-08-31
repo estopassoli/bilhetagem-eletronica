@@ -55,10 +55,11 @@ exports.postRouter = (app) => {
             sentido,
             linha
         } = req.body;
+        console.log(date, sentido, linha)
         let data = []
         try {
             let file = fs.readFileSync(path.resolve(__dirname, '../db/' + date + '_' + sentido + '_' + linha + '.csv'), 'utf8')
-
+            console.log(file)
             if (file) {
                 file = file.split('\n')
                 file.shift()

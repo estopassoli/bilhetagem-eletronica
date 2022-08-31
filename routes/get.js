@@ -6,7 +6,6 @@ exports.getRouter = (app) => {
     app.get('/getdata', (req, res) => {
         let files = fs.readdirSync(path.resolve(__dirname, '../db/'))
 
-        let dat = 'Data;Linha;Sentido;Prefixo;Tabela;Programado;Inicio Real;Fim Real;Qtd. Pass.;Encerrante;Observação\n'
         if (req.query.token == 'acredite') {
             for (let i in files) {
 
@@ -25,7 +24,9 @@ exports.getRouter = (app) => {
         let files = fs.readdirSync(path.resolve(__dirname, '../uploads'))
         let resp = '';
         for (let i in files) {
-            resp += `<option value="${files[i].split('.')[0]}">${files[i].split('.')[0]}</option>`
+            if (files[i] != 'ignore') {
+                resp += `<option value="${files[i].split('.')[0]}">${files[i].split('.')[0]}</option>`
+            }
         }
         res.json(resp)
     })
