@@ -162,9 +162,9 @@ i {
     gap: 15px;
 }
 
-/* input[type="date"]{
-    color: #fff;
-} */
+input[type="date"]{
+    min-width: 110px !important;
+}
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
