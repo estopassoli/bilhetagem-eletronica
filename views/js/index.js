@@ -22,19 +22,15 @@ const deletethis = (v) => {
 $('form').on('submit', (e) => {
     e.preventDefault()
     const dados = $(document.forms[0]).serialize()
-    //console.log(dados)
     $.ajax({
         url: '/api/v1/nova-bilhetagem',
         type: 'POST',
         data: dados,
-        success: function () {
-
-        }
+        success: function () {}
     })
     setTimeout(() => {
         alert('Dados enviados com sucesso!')
-        window.location.href = '/';
-    }, 2000)
+    }, 1000)
 })
 
 $('#bring_data').on('click', function () {
@@ -123,4 +119,22 @@ $.ajax({
     success: function (data) {
         $('#linha').append(data)
     }
+})
+
+
+function imprimir() {
+    document.querySelectorAll('input').forEach(input => {
+        input.removeAttribute('placeholder')
+    })
+
+    printJS('table', 'html')
+}
+
+$('#download').on('click', function () {
+    let date = $('#date').val()
+    let sentido = $('#sentido').val()
+    let linha = $('#linha').val()
+
+    window.location.href = `/download-one?date=${date}&sentido=${sentido}&linha=${linha}`
+
 })

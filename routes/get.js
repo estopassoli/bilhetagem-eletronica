@@ -20,6 +20,7 @@ exports.getRouter = (app) => {
             res.end('access denied')
         }
     })
+
     app.get('/api/v1/bilhetagens-disponiveis', (req, res) => {
         let files = fs.readdirSync(path.resolve(__dirname, '../uploads'))
         let resp = '';

@@ -93,8 +93,16 @@ exports.postRouter = (app) => {
         }
         res.json(data);
     })
-
-
+    app.get('/download-one', (req, res) => {
+        let files = fs.readdirSync(path.resolve(__dirname, '../db/'))
+        const file = `${req.query.date}_${req.query.sentido}_${req.query.linha}.csv`;
+        let i = files.includes(file)
+        if (i) {
+            let download = path.resolve('./db/' + file)
+            console.log(download)
+            res.sendFile(download)
+        }
+    })
     app.post('/api/v1/delete-digitado', (req, res) => {
         const file = req.body.file;
         fs.rmSync(path.resolve(__dirname, '../db/' + file + '.csv'))
