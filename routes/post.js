@@ -65,8 +65,8 @@ exports.postRouter = (app) => {
                 for (let i in file) {
                     let split = file[i].split(';')
                     var dados = {
-                        prefixo: split[3],
-                        tabela: split[4],
+                        tabela: split[3],
+                        prefixo: split[4],
                         programado: split[5],
                         hora_ini: split[6],
                         hora_fim: split[7],
