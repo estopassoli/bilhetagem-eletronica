@@ -99,7 +99,7 @@ select:focus {
 
 .body {
     overflow: auto;
-    height: 73%;
+    height: 65%;
     margin-bottom: 25px;
     align-items: center;
     text-align: center;
@@ -215,17 +215,13 @@ th {
 }
 
 
-.add-line{
 
-    margin: 0 auto;
-}
 .add-line a{
-    margin-top: 10px;
     text-decoration: none;
     color: #fff;
     transition: .15s all ease;
     border: 1px solid #fff;
-    padding: 15px;
+    padding: 6.5px;
     width: 300px;
     min-width: 300px;
     max-width: 300px;
