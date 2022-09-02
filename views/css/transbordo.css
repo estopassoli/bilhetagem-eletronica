@@ -1,0 +1,255 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+form{
+    width: 100%;
+    height: 100%;
+}
+body {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    background-color: #6d6d6d;
+}
+
+::-webkit-scrollbar-thumb {
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #212529b9;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+table {
+    max-width: 100%;
+    max-height: 90%;
+}
+
+thead {
+    background-color: #6d6d6d;
+}
+
+tbody {
+    text-align: center;
+    background-color: #fff;
+}
+
+
+td {
+
+    padding: 5px;
+
+}
+
+th {
+    text-align: center;
+    padding: 5px;
+}
+
+table input,
+table select {
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+
+}
+
+input:focus,
+select:focus {
+    outline: none;
+
+}
+
+
+.light {
+    color: #212529;
+    background-color: #ccc;
+}
+
+.dark {
+    background-color: #212529;
+    color: #fff;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #212529b9;
+}
+
+.body {
+    overflow: auto;
+    height: 73%;
+    margin-bottom: 25px;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.footer {
+    background-color: #212529;
+    overflow: auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.footer input {
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    color: #fff;
+    outline: none;
+    background-color: transparent;
+    transition: .2s ease all;
+    font-weight: bold;
+}
+
+
+
+.footer input:hover {
+    color: rgb(0, 255, 200);
+    border: 1px solid rgb(0, 255, 200);
+    border-radius: 10px;
+}
+
+i {
+    color: #fff;
+    transition: .2s ease all;
+}
+
+.header {
+    background-color: #212529;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    height: 9%;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+input[type="date"] {
+    min-width: 110px !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    accent-color: #fff;
+}
+
+.spinner-border {
+    color: #fff;
+    margin: 15% 0;
+}
+
+input {
+    cursor: text;
+    border: none;
+    border-bottom: 1px solid #fff;
+}
+
+.header>input,
+select {
+    border: none;
+    border-bottom: 1px solid #fff;
+    max-width: 100px;
+    font-family: monospace;
+    min-width: 50px;
+    height: max-content;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+
+
+}
+
+option {
+    color: #000;
+}
+
+.header a {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.header a>i:hover {
+    color: rgb(0, 255, 200);
+}
+
+tr,
+td,
+th {
+    max-height: 80px;
+}
+
+
+.add-line{
+
+    margin: 0 auto;
+}
+.add-line a{
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: .15s all ease;
+    border: 1px solid #fff;
+    padding: 15px;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+
+.add-line a:hover * {
+    transform: scale(1.05);
+    color: #000;
+}
+
+.add-line a{
+    gap: 10px;
+    text-align: center;
+}
+.add-line a>svg,
+.add-line a>i {
+    float: left;
+}
+
+.add-line i:hover,
+.add-line a:hover {
+    transform: scale(1.05);
+    background-color: #fff;
+    color: #000;
+}

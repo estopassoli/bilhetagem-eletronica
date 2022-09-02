@@ -3,6 +3,17 @@ const path = require('path')
 
 //s
 exports.getRouter = (app) => {
+
+
+    app.get('/programado', (req, res) => {
+        res.render('programado.html')
+    })
+
+
+    app.get('/transbordo', (req, res) => {
+        res.render('transbordo.html')
+    })
+
     app.get('/getdata', (req, res) => {
         let files = fs.readdirSync(path.resolve(__dirname, '../db/'))
         let dat = ''

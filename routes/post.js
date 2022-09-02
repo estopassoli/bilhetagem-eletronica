@@ -21,6 +21,27 @@ const upload = multer({
     storage
 });
 exports.postRouter = (app) => {
+
+
+    app.post('/api/v1/novo-transbordo', (req, res) => {
+        const header = "Carro;Sentido;Ponto de Parada;Chegada no Ponto;Saída do Ponto;Qtd. Pass.;Obs\n"
+        const data = {
+            date: req.body.date,
+            linha: req.body.linha,
+            prefixo: req.body.prefixo,
+            sentido: req.body.sentido,
+            ponto: req.body.ponto,
+            hora_ini: req.body.hora_ini,
+            hora_fim: req.body.hora_fim,
+            qtd_pax: req.body.qtd_pax,
+            obs: req.body.obs
+        }
+        let line = "";
+        for (let i in data.programado) {
+            line += `${data.date};${data.linha[i]};${data.prefixo[i]};${data.sentido[i]};${data.ponto[i]};${data.hora_ini[i]};${data.hora_fim[i]};${data.qtd_pax[i]};${data.obs[i]}\n`;
+        }
+        fs.writeFileSync(path.resolve(__dirname, '../db/' + `${data.date}_${data.sentido}_${data.linha}.csv`), header + line)
+    })
     app.post('/api/v1/nova-bilhetagem', (req, res) => {
         const header = "Data;Linha;Sentido;Tabela;Prefixo;Programado;Inicio Real;Fim Real;Qtd. Pass.;Encerrante;Observação\n"
         const data = {
