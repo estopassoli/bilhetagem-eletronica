@@ -8,6 +8,7 @@ body {
     overflow: hidden;
 
 }
+
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -48,7 +49,6 @@ tbody {
 
 
 td {
-    max-height: 35px;
     padding: 5px;
 
 }
@@ -66,6 +66,7 @@ table select {
     border-bottom: 1px solid #000;
 
 }
+
 input:focus,
 select:focus {
     outline: none;
@@ -162,7 +163,7 @@ i {
     gap: 15px;
 }
 
-input[type="date"]{
+input[type="date"] {
     min-width: 110px !important;
 }
 
@@ -208,4 +209,10 @@ option {
 
 .header a>i:hover {
     color: rgb(0, 255, 200);
+}
+
+
+
+tr {
+    max-height: 35px !important;
 }
