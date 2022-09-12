@@ -10,9 +10,9 @@ const storage = multer.diskStorage({
         const extensaoArquivo = file.originalname.split('.')[1];
         const nomeArquivo = file.originalname.split('.')[0];
         // Indica o novo nome do arquivo:
-        setTimeout(() => {
-            fs.rmSync(path.resolve(__dirname, '../uploads/' + nomeArquivo + '.' + extensaoArquivo))
-        }, 1000 * 60 * 60 * 24)
+        /*  setTimeout(() => {
+             fs.rmSync(path.resolve(__dirname, '../uploads/' + nomeArquivo + '.' + extensaoArquivo))
+         }, 1000 * 60 * 60 * 24) */
         cb(null, `${nomeArquivo}.${extensaoArquivo}`)
     }
 });
