@@ -43,7 +43,7 @@ exports.getRouter = (app) => {
         let files = fs.readdirSync(path.resolve(__dirname, '../uploads'))
         let resp = '';
         for (let i in files) {
-            if (files[i] != 'ignore') {
+            if (files[i] != 'robots.txt') {
                 resp += `<option value="${files[i].split('.')[0]}">${files[i].split('.')[0]}</option>`
             }
         }

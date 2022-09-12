@@ -23,7 +23,9 @@
 </head>
 
 <body style="display: flex; text-align: center;justify-content: center;align-items: center;">
+    <br>
     <form action="/api/v1/upload" method="post" enctype="multipart/form-data" style="margin: 15% 0 ;width: 400px;">
+    <span style="color: red;">AVISO: Exportar dados Eventos da Tripulação como CSV, um arquivo para cada linha/tipo de dia</span>
         <div class="mb-3">
             <label for="formFile" class="form-label">Clique ou arraste o arquivo:</label>
             <input class="form-control" name="arquivo" type="file" id="formFile">
